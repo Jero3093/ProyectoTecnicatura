@@ -1,0 +1,1372 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url(../Icons/Background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+    border-radius: 15px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 10px;
+}
+
+.container {
+    height: 100vh;
+}
+
+/*===============
+     Inputs de Lista gastos
+================*/
+.InputSearch-Gastos {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    height: 50px;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.555);
+    font-size: 16px;
+}
+
+/*===============
+     Inputs de Lista Articulos
+================*/
+.InputSearch-Articulos {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    height: 50px;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.555);
+    font-size: 16px;
+}
+
+/*===============
+     NavBar
+================*/
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.TitleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.Icon {
+    width: 60px;
+    height: 60px;
+}
+
+.Nav_BackButton-Icon {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.Title {
+    font-size: 22px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.Nav_Menu-Open {
+    margin-left: 10px;
+}
+
+.NavButtons_Container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    align-items: center;
+}
+
+.NavButton {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.NavButtonIcon {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 0 1px white);
+}
+
+.LoginButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginButton__Icon {
+    scale: 1.5;
+    width: 35px;
+    height: 35px;
+    filter: drop-shadow(0 0 1px gray);
+    opacity: 0.5;
+}
+
+.LoginButton__IconS {
+    width: 35px;
+    height: 35px;
+    filter: drop-shadow(0 0 1px gray);
+    opacity: 0.5;
+}
+
+.Nav-Content-Container {
+    flex-direction: row;
+    width: 80%;
+    display: none;
+    margin: 0 auto;
+}
+
+.Nav-InputSearch {
+    width: 100%;
+    height: 50px;
+    outline: none;
+    padding: 10px;
+    border-radius: 0 10px 10px 0;
+    border-top: 1px solid rgba(128, 128, 128, 0.555);
+    border-right: 1px solid rgba(128, 128, 128, 0.555);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.555);
+    border-left: 0;
+    font-size: 16px;
+}
+
+.Nav-DropdownButton {
+    width: 220px !important;
+    height: 50px !important;
+    border-radius: 10px 0 0 10px !important;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.555) !important;
+    border-top: 1px solid rgba(128, 128, 128, 0.555) !important;
+    border-left: 1px solid rgba(128, 128, 128, 0.555) !important;
+    border-right: 1px solid rgba(128, 128, 128, 0.555) !important;
+    font-size: 16px !important;
+    padding: 10px !important;
+    margin-bottom: 2px;
+    outline: none;
+    background-color: #fff !important;
+    color: black !important;
+}
+
+.Nav-DropMenu {
+    width: 220px;
+    flex-direction: column;
+}
+
+.Nav_LogOut-Icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+/*===============
+    Menu
+===============*/
+
+.Menu {
+    display: none;
+    flex-direction: column;
+    padding-top: 10px;
+    background-color: #e6e6e6;
+    width: 100%;
+    top: 80px;
+    position: absolute;
+    z-index: 9999;
+    box-shadow: 0 0 2px gray;
+    border-bottom: 1px solid gray;
+}
+
+.Menu_Search {
+    display: flex;
+    flex-direction: row;
+    padding: 0 5px 0 5px;
+    margin-bottom: 10px;
+}
+
+.Menu_Search-Input {
+    width: 100%;
+    height: 50px;
+    outline: none;
+    padding: 10px;
+    border-radius: 7px 0 0 7px;
+    border-top: 1px solid rgba(128, 128, 128, 0.555);
+    border-left: 1px solid rgba(128, 128, 128, 0.555);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.555);
+    border-right: 0;
+    font-size: 16px;
+}
+
+.Menu_Search-Button {
+    width: 50px;
+    height: 50px;
+    border-top: 1px solid rgba(128, 128, 128, 0.555);
+    border-right: 1px solid rgba(128, 128, 128, 0.555);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.555);
+    border-left: 0;
+    border-radius: 0 7px 7px 0;
+    background-color: #fff;
+    outline: none;
+}
+
+.Menu_Search-Button-Icon {
+    width: 30px;
+    height: 30px;
+    opacity: 0.4;
+}
+
+.MenuActive {
+    display: flex;
+}
+
+.Menu_Category {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: 5px;
+}
+
+.Menu_Category-item {
+    color: black;
+    text-decoration: none;
+}
+
+/*===============
+     Banner
+================*/
+
+.Banners {
+    width: 100vw;
+    height: 300px;
+    display: flex;
+    overflow: hidden;
+}
+
+.BannerImg {
+    width: 80%;
+    height: 300px;
+}
+
+/*=======================
+    Add Product Image
+========================*/
+
+.AddProductImage_Container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    padding: 10px;
+    background-color: #fff;
+    max-width: 900px;
+
+}
+
+.AddProductImage_Carrousel {
+    box-shadow: 0px -3px 36px 0px rgba(0, 0, 0, 0.1);
+    padding-left: 5px;
+    padding-right: 5px;
+
+    width: 370px;
+    height: 315px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    overflow: hidden;
+    overflow-x: scroll;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.AddProductImage_Carrousel::-webkit-scrollbar {
+    height: 8px;
+    background-color: transparent;
+    border-radius: 15px;
+}
+
+.AddProductImage_Carrousel::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 10px;
+
+}
+
+.AddProductImage_Carrousel-Card {
+    width: 370px;
+    height: 300px;
+    border: 1px solid #0000003b;
+    border-top: 10px;
+    margin-top: 32px;
+}
+
+.AddProductImage_Carrousel-Card-Img {
+    width: 300px;
+    aspect-ratio: 1;
+    border: 1px solid #00000017;
+}
+
+.AddProductImage-Submit {
+    background-color: transparent;
+    padding: 10px 25px 10px 25px;
+    outline: none;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/*==================
+    Products List 
+===================*/
+
+.ProductsList {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 10px;
+}
+
+.ProductsList_Card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 2px #00000047;
+    transition: 0.2s linear;
+}
+
+.ProductsList_Card:hover {
+    box-shadow: 0 0 7px #00000047;
+    transition: 0.2s ease-in-out;
+}
+
+.ProductsList_Card-Img {
+    width: 100%;
+    /* Ancho del 100% del contenedor */
+    height: 100%;
+    /* Altura del 100% del contenedor */
+    object-fit: cover;
+    /* La imagen se ajustará al contenedor sin perder su relación de aspecto */
+}
+
+.ProductsList_Card-Content {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.ProductsList_Card-Name_Container {
+    width: 100%;
+    height: 51px;
+    max-height: 51px;
+    overflow: hidden;
+}
+
+.ProductsList_Card-Name {
+    font-family: "Segoe UI";
+    font-size: 20px;
+    word-break: break-all;
+    text-align: center;
+
+}
+
+.contain-imgCard {
+    width: 180px !important;
+    /* Ancho deseado del contenedor */
+    height: 180px !important;
+    /* Altura deseada del contenedor */
+}
+
+/*====================
+    Product Details 
+=====================*/
+
+.ProductDetails {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.ProductDetails_Main {
+    width: 330px;
+    height: 350px;
+    background-color: #fff;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 2px black;
+    border-radius: 10px;
+    border: 1px solid #0000001a;
+}
+
+.ProductDetails_Main-Img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+
+}
+
+.ProductDetails_Main-Content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.ProductDetails_Main-Category {
+    color: #737373;
+}
+
+.ProductDetails_Main-Name {
+    font-size: 20px;
+}
+
+.ProductDetails_Main-Description {
+    line-height: 25px;
+}
+
+.ProductDetails_Main-Price {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.ProductDetails_Main-Button {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-size: 17px;
+    background-color: rgb(45, 227, 45);
+    text-decoration: none;
+    color: black;
+}
+
+.ProductsList_Card-Cat {
+    color: #737373;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.ProductsList_Card-Price {
+    text-align: center;
+    font-family: fantasy;
+    color: brown;
+}
+
+/*--Category Products List--*/
+
+.ProductDetails_CategoryList__Container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    overflow: hidden;
+    overflow-x: scroll;
+    padding-bottom: 30px;
+    margin: 30px auto 30px;
+    max-width: 380px;
+}
+
+.ProductDetails_CategoryList__Container::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    background-color: transparent;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.ProductDetails_CategoryList__Container::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/*====================
+    Funtions Page
+====================*/
+
+.FuntionsContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+
+.FuntionCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 6px gray;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s ease-in-out;
+    max-width: 700px;
+    padding: 10px;
+}
+
+.FuntionCard:hover {
+    box-shadow: 0 0 10px gray;
+    transition: 0.2s ease-in-out;
+    transform: scale(1.01, 1.01);
+}
+
+.FunctionCard-Content {
+    display: flex;
+    flex-direction: column;
+}
+
+.FuntionCard_Title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.FuntionCard_Icon-Container {
+    display: flex;
+    align-items: center;
+}
+
+.FuntionCard_Icon {
+    width: 35px;
+    height: 35px;
+}
+
+/*=====================
+    Balance Page
+=====================*/
+
+.BalanceCalculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    backdrop-filter: blur(10px);
+    background: #ffffff9d;
+    min-width: 320px;
+    max-width: 900px;
+    border-radius: 5px;
+    margin: 0 auto;
+    box-shadow: 0 0 1px gray;
+}
+
+.BalanceCalculator_Title {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.BalanceCalculator_Percentage-Text {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.BalanceCalculator_FormContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.BalanceCalculator_InputContainer {
+    border-top: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding-top: 10px;
+}
+
+.BalanceCalculator_Input {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px black;
+}
+
+.BalanceCalculator_ButtonCalcular {
+    width: 250px;
+    height: 50px;
+    margin-top: 30px;
+    font-size: 25px;
+    outline: none;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 1px solid #0000003d;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.BalanceCalculator_ButtonCalcular:hover {
+    transition: 0.2s ease-in-out;
+    border: 2px solid black;
+    transform: scale(1.01, 1.01);
+}
+
+/*=====================
+    Add Product Page
+=====================*/
+
+.AddProduct_FormContainer {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    row-gap: 10px;
+    margin: 0 auto;
+}
+
+.AddProduct_FormTitle {
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.AddProduct_FormContainer-Row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    column-gap: 10px;
+}
+
+.AddProduct_InputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.AddProduct_Obligatory {
+    color: red;
+    font-size: 18px;
+}
+
+.AddProduct_Input {
+    padding: 6px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid gray;
+}
+
+.AddProduct_CategoryContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    row-gap: 10px;
+}
+
+.AddProduct_CategoryInput-Container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.AddProduct_BotonCategoria {
+    background-color: transparent;
+    color: rgb(66, 66, 249);
+    border: 2px solid rgb(66, 66, 249);
+    outline: none;
+    padding: 6px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.AddProduct_BotonCategoria:hover {
+    background-color: rgb(66, 66, 249);
+    color: white;
+}
+
+.AddProduct_BotonEnviar {
+    width: 250px;
+    align-self: center;
+    border: 1px solid;
+    padding: 6px;
+    margin-top: 10px;
+    border-radius: 50px;
+    background-color: transparent;
+    color: green;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: 0.2s linear;
+}
+
+.AddProduct_BotonEnviar:hover {
+    transition: 0.2s linear;
+    transform: scale(1.01, 1.01);
+}
+
+/*==============
+    Footer
+==============*/
+
+.footer {
+    background-color: #e2e8f0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    margin-top: auto;
+    row-gap: 10px;
+}
+
+.FooterMain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.FooterIcon {
+    width: 50px;
+    height: 50px;
+}
+
+.FooterContentIcon:nth-child(2) {
+    width: 40px;
+    height: 40px;
+}
+
+.FooterTitle {
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 0;
+}
+
+.FooterContentContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    row-gap: 12px;
+    column-gap: 30px;
+    align-items: center;
+}
+
+.FooterContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.FooterContentIcon {
+    width: 35px;
+    height: 35px;
+}
+
+.Footer-ContentTitle {
+    margin-bottom: 0;
+    display: none;
+}
+
+/*================
+    Copyright
+================*/
+.Copyright {
+    background-color: #e2e8f0;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.CopyrightText {
+    font-size: 16px;
+    color: gray;
+}
+
+/*====================
+    Whatsapp Button
+====================*/
+
+.WhatsappButton {
+    width: 65px;
+    height: 65px;
+    position: sticky;
+    bottom: 30px;
+    left: 95%;
+
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.WhatsappButton__Icon {
+    width: 45px;
+    height: 45px;
+    filter: drop-shadow(0 0 2px black);
+}
+
+/*==================
+    Login Page
+==================*/
+
+.LoginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    row-gap: 20px;
+    justify-content: center;
+
+    backdrop-filter: blur(6px);
+}
+
+.LoginContainer_Logo {
+    width: 150px;
+    height: 150px;
+}
+
+.Login_InputContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.Login_InputContainer-Label {
+    font-size: 25px;
+}
+
+.Login_InputContainer-Input {
+    width: 350px;
+    height: 50px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    transition: 0.2s ease-in-out;
+    outline: none;
+    font-family: inherit;
+}
+
+.Login_InputContainer-Input::placeholder {
+    color: rgb(171, 171, 171);
+}
+
+.Login_InputContainer-Input:hover {
+    transition: 0.2s ease-in-out;
+    border: 1px solid gray;
+    padding: 15px;
+    border-radius: 13px;
+}
+
+.Login_SubmitButton {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 280px;
+    height: 50px;
+    font-size: 23px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.1s linear;
+}
+
+.Login_SubmitButton:hover {
+    transition: 0.1s linear;
+    border: 1px solid gray;
+    font-size: 25px;
+    border-radius: 50px;
+    padding: 10px;
+    letter-spacing: 1px;
+}
+
+.LoginContainer_Home {
+    margin-top: 20px;
+}
+
+.LoginContainer_Home-Text {
+    color: gray;
+}
+
+.LoginContainer_Home-Link {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.LoginContainer_Home-Link:hover {
+    color: rgb(213, 0, 0);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*=======================
+    Add Product Image
+========================*/
+.AddProductImage_Container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    padding: 10px;
+    background-color: #fff;
+    max-width: 900px;
+}
+
+.AddProductImage_Carrousel {
+    width: 370px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    overflow: hidden;
+    overflow-x: scroll;
+    align-items: center;
+    padding-bottom: 50px;
+    height: 100%;
+}
+
+.AddProductImage_Carrousel::-webkit-scrollbar {
+    height: 8px;
+    background-color: transparent;
+    border-radius: 15px;
+}
+
+.AddProductImage_Carrousel::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 10px;
+}
+
+.AddProductImage_Carrousel-Card {
+    width: 370px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+}
+
+.AddProductImage_Carrousel-Card-Img {
+    width: 300px;
+    aspect-ratio: 1;
+}
+
+.AddProductImage_Carrousel-Card-Button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.AddProductImage_Carrousel-Card-Button-Icon {
+    width: 30px;
+    height: 30px;
+}
+
+.AddProductImage-Submit {
+    background-color: transparent;
+    padding: 10px 25px 10px 25px;
+    outline: none;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+
+/*====================
+    Tabla Facturar
+=====================*/
+
+.FacturarTable_Container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    overflow-x: scroll;
+    padding-bottom: 30px;
+}
+
+.FacturarTable {
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 2px black;
+    background-color: #fff;
+}
+
+.FacturarTable_Title-Container {
+    background-color: aliceblue;
+}
+
+.FacturarTable_Title {
+    padding: 10px 20px 10px 20px;
+    font-size: 20px;
+}
+
+.FacturarTable_Options {
+    padding: 20px;
+}
+
+.FacturarTable_Options-Input {
+    padding: 10px;
+    border: 2px solid black !important;
+    border-radius: 5px;
+}
+
+.FacturarTable_Submit {
+    width: 900px;
+    margin: 0 auto;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+    color: blue;
+    font-size: 20px;
+    border: 2px solid blue;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.FacturarTable_Submit:not(:disabled) {
+    width: 900px;
+    margin: 0 auto;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+    color: blue;
+    font-size: 20px;
+    border: 2px solid blue;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.FacturarTable_Submit:disabled {
+    opacity: 0.6;
+}
+
+.FacturarTable_Submit:hover {
+    transition: 0.1s ease-in-out;
+    border: 3px solid #fff;
+    background-color: blue;
+    outline: 5px solid blue;
+    color: #fff;
+}
+
+.FacturarTable_Total {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.FacturarTable_Total-Options {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    align-items: center;
+}
+
+/*======================
+    Responsive Tablet 
+=======================*/
+@media screen and (min-width: 768px) {
+
+    /*--Add Product Images--*/
+
+    .AddProductImage_Carrousel {
+        width: 650px;
+    }
+
+    /*--Title--*/
+
+    .Title {
+        display: block;
+    }
+
+    /*--Products List--*/
+
+    .ProductsList {
+        grid-template-columns: repeat(3, max-content);
+        column-gap: 10px;
+    }
+
+    /*--Product Details Page--*/
+
+    .ProductDetails {
+        flex-direction: row;
+        column-gap: 30px;
+    }
+
+    .ProductDetails_Main {
+        width: 300px;
+        height: 340px;
+    }
+
+    .ProductDetails_Main-Img {
+        width: 290px;
+        height: 290px;
+    }
+
+    /*--Product Content Button--*/
+
+    .ProductDetails_Main-Button {
+        align-self: center;
+    }
+
+    /*--Product Details Category List--*/
+
+    .ProductDetails_CategoryList__Container {
+        max-width: 600px;
+    }
+
+    /*--Funtions Page--*/
+
+    .FuntionsContainer {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+        column-gap: 20px;
+        place-items: center;
+    }
+
+    /*--Balance Page--*/
+
+    .BalanceCalculator_FormContainer {
+        flex-direction: row;
+        row-gap: 20px;
+        column-gap: 30px;
+    }
+
+    .BalanceCalculator_InputContainer {
+        border-top: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        padding-top: 10px;
+        padding-right: 10px;
+    }
+
+    .BalanceCalculator_InputContainer:nth-child(2) {
+        border-right: none;
+        padding-right: 0;
+    }
+
+    /*--Footer--*/
+
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .FooterContentContainer {
+        display: flex;
+        row-gap: 10px;
+        flex-direction: row;
+    }
+
+    .Footer-ContentTitle {
+        display: block;
+    }
+}
+
+/*======================
+    Responsive Laptop 
+=======================*/
+@media screen and (min-width: 1024px) {
+
+    /*--Add Product---*/
+    .AddProduct_FormContainer-Row {
+        flex-direction: row;
+    }
+
+    /*--Add Product Images--*/
+
+    .AddProductImage_Carrousel {
+        width: 900px;
+    }
+
+    /*--Nav--*/
+
+    .nav {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .Nav_Menu-Open {
+        display: none;
+    }
+
+    .Menu {
+        display: none;
+    }
+
+    .Nav-Content-Container {
+        display: flex;
+    }
+
+    /*--Banner--*/
+
+    .Banners {
+        width: 80% !important;
+        display: flex;
+        margin: auto;
+    }
+
+    /*--Products List--*/
+
+    .ProductsList {
+        grid-template-columns: repeat(4, max-content);
+    }
+
+    /*--Product Details Page--*/
+
+    .ProductDetails {
+        flex-direction: row;
+        row-gap: none;
+        column-gap: 50px;
+        margin-top: none;
+        padding: 40px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .ProductDetails_Main-Content {
+        row-gap: 20px;
+    }
+
+    .ProductDetails_Main {
+        width: 400px;
+        height: 440px;
+        padding: 10px;
+    }
+
+    .ProductDetails_Main-Img {
+        width: 390px;
+        height: 440px;
+    }
+
+    .ProductDetails_Main-Category {
+        color: #737373;
+        font-size: 20px;
+    }
+
+    .ProductDetails_Main-Name {
+        font-size: 25px;
+    }
+
+    .ProductDetails_Main-Description {
+        line-height: 25px;
+        font-size: 18px;
+    }
+
+    .ProductDetails_Main-Price {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .ProductDetails_Main-Button {
+        width: 360px;
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .ProductDetails_Main-Button-Img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .ProductDetails_CategoryList {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .ProductDetails_CategoryList-Title {
+        font-size: 25px;
+    }
+
+    /*--Product Details Category List--*/
+
+    .ProductDetails_CategoryList__Container {
+        max-width: none;
+    }
+
+    /*--Funtions Page--*/
+
+    .FuntionsContainer {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+        column-gap: 20px;
+        place-items: center;
+    }
+
+
+    /*--Footer--*/
+
+    .footer {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .FooterContentContainer {
+        flex-direction: row;
+        column-gap: 20px;
+    }
+}
+
+/*===========================
+    Responsive Laptop Large
+============================*/
+@media screen and (min-width: 1440px) {
+    /*--Products List--*/
+
+    .ProductsList {
+        grid-template-columns: repeat(5, max-content);
+    }
+}

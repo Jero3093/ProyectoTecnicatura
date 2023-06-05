@@ -1,0 +1,1 @@
+<?php header('location: ./ecommerce/index.php');?>

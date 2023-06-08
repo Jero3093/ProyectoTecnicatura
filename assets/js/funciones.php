@@ -116,7 +116,7 @@ function mostrarArticulos_Ecommerce()
                   <div class="ProductsList_Card-Name_Container">
                   <h5 class="ProductsList_Card-Name">' . $fila["art_nom"] . '</h5>
                   </div>
-                  <div class="text-center">Disponibles:' . $fila["art_stock"] . '</div>
+                  <div class="text-center">Disponibles: ' . $fila["art_stock"] . '</div>
                   <h4 class="ProductsList_Card-Price">$' . $fila["art_precio"] . '</h4>
                   </div>
                   </div>';

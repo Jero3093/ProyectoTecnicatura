@@ -39,11 +39,13 @@
                 <div class="AddProduct_InputContainer">
                     <label for="CodArt">Codigo de Articulo:<span class="AddProduct_Obligatory">*</span></label>
                     <input type="text" name="codArticulo" id="txt__codArticulo" class="AddProduct_Input" required>
+                    <span class="text-danger d-none" id="txt__codArticulo_error">Este Codigo ya existe</span>
                 </div>
                 <!--Nombre Articulo-->
                 <div class="AddProduct_InputContainer">
                     <label for="NomArt">Nombre de Articulo:<span class="AddProduct_Obligatory">*</span></label>
                     <input type="text" name="nombreArticulo" id="txt__nombreArticulo" class="AddProduct_Input" required>
+                    <span class="text-danger d-none" id="txt__nombreArticulo_error">Este Nombre ya existe</span>
                 </div>
             </div>
             <div class="AddProduct_FormContainer-Row">

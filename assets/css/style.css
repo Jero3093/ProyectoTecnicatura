@@ -29,9 +29,9 @@ body::-webkit-scrollbar-thumb {
     height: 100vh;
 }
 
-/*===============
-     Inputs de Lista gastos
-================*/
+/*===========================
+    Inputs de Lista gastos
+===========================*/
 .InputSearch-Gastos {
     display: flex;
     margin: 0 auto;
@@ -44,18 +44,18 @@ body::-webkit-scrollbar-thumb {
     font-size: 16px;
 }
 
-/*===============
-     Inputs de Lista Articulos
-================*/
+/*================================
+    Inputs de Lista Articulos
+================================*/
 .InputSearch-Articulos {
     display: flex;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     width: 80%;
     height: 50px;
     outline: none;
     padding: 10px;
     border-radius: 10px;
-    border: 1px solid rgba(128, 128, 128, 0.555);
+    border: 2px solid rgba(128, 128, 128, 0.555);
     font-size: 16px;
 }
 
@@ -433,7 +433,7 @@ body::-webkit-scrollbar-thumb {
 .ProductDetails_Main {
     width: 330px;
     height: 350px;
-    background-color: #fff;
+    background-color: #f5f5f5;
     display: flex;
     align-self: center;
     align-items: center;
@@ -441,13 +441,13 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 0 2px black;
     border-radius: 10px;
     border: 1px solid #0000001a;
+    overflow: hidden;
 }
 
 .ProductDetails_Main-Img {
     width: 100%;
-    height: 240px;
-    object-fit: contain;
-
+    height: 100%;
+    object-fit: cover;
 }
 
 .ProductDetails_Main-Content {
@@ -1144,17 +1144,17 @@ body::-webkit-scrollbar-thumb {
 
     .ProductDetails {
         flex-direction: row;
-        column-gap: 30px;
+        column-gap: 10px;
     }
 
     .ProductDetails_Main {
-        width: 300px;
+        width: 330px;
         height: 340px;
     }
 
     .ProductDetails_Main-Img {
-        width: 290px;
-        height: 290px;
+        width: 100%;
+        height: 100%;
     }
 
     /*--Product Content Button--*/
@@ -1284,14 +1284,13 @@ body::-webkit-scrollbar-thumb {
     }
 
     .ProductDetails_Main {
-        width: 400px;
+        width: 430px;
         height: 440px;
-        padding: 10px;
     }
 
     .ProductDetails_Main-Img {
-        width: 390px;
-        height: 440px;
+        width: 100%;
+        height: 100%;
     }
 
     .ProductDetails_Main-Category {

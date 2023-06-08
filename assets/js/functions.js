@@ -1101,12 +1101,16 @@ $(function () {
             $("#txt__codArticulo").addClass(
               "form-control border border-danger"
             );
+            $("#txt__codArticulo_error").removeAttr("class");
+            $("#txt__codArticulo_error").addClass("text-danger d-block");
           } else {
             verificacion_codigoArt = "no";
             $("#txt__codArticulo").removeAttr("class");
             $("#txt__codArticulo").addClass(
               "form-control border border-success"
             );
+            $("#txt__codArticulo_error").removeAttr("class");
+            $("#txt__codArticulo_error").addClass("text-danger d-none");
           }
         },
         error: function (error) {},
@@ -1143,12 +1147,16 @@ $(function () {
             $("#txt__nombreArticulo").addClass(
               "form-control border border-danger"
             );
+            $("#txt__nombreArticulo_error").removeAttr("class");
+            $("#txt__nombreArticulo_error").addClass("text-danger d-block");
           } else if (data == "noExiste") {
             verificacion_nombreArt = "no";
             $("#txt__nombreArticulo").removeAttr("class");
             $("#txt__nombreArticulo").addClass(
               "form-control border border-success"
             );
+            $("#txt__nombreArticulo_error").removeAttr("class");
+            $("#txt__nombreArticulo_error").addClass("text-danger d-none");
           }
         },
         error: function (error) {},

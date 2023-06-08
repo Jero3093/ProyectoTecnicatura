@@ -1,4 +1,3 @@
-
 <?php
 
 $idFactura;
@@ -70,23 +69,21 @@ function mostrarArticulos()
 
   mysqli_close($conexion);
 }
+
 function mostrarArticulos_Ecommerce()
 {
   include('./../assets/js/bd.php');
   // 2) Preparar la orden SQL
   $consulta = "SELECT articulos.*, categorias.*, primera_imagen.ruta_img AS art_imagen
-  FROM articulos 
-  INNER JOIN categorias ON articulos.art_categoria = categorias.cat_id 
-  LEFT JOIN (
-    SELECT art_id, ruta_img
-    FROM art_imagenes
-    GROUP BY art_id
-  ) AS primera_imagen ON articulos.art_id = primera_imagen.art_id
-  ORDER BY articulos.art_id DESC;
-  ";
-
-  // puedo seleccionar de DB
-  $db = mysqli_select_db($conexion, $nombreBD) or die("Upps! Pues va a ser que no se ha podido conectar a la base de datos");
+    FROM articulos 
+    INNER JOIN categorias ON articulos.art_categoria = categorias.cat_id 
+    LEFT JOIN (
+      SELECT art_id, ruta_img
+      FROM art_imagenes
+      GROUP BY art_id
+    ) AS primera_imagen ON articulos.art_id = primera_imagen.art_id
+    ORDER BY articulos.art_id DESC;
+    ";
 
   // 3) Ejecutar la orden y obtener datos
   $datos = mysqli_query($conexion, $consulta);
@@ -97,42 +94,41 @@ function mostrarArticulos_Ecommerce()
     while ($fila = mysqli_fetch_array($datos)) {
       //<th scope="col-1">'.$i++.'</th>
       echo '<div class="ProductsList_Card" id="art_Ecommerce" onclick="redireccionArticulo(' . $fila["art_id"] . ')">
-              <div class="contain-imgCard">
-                <img src="';
+    <div class="contain-imgCard">
+    <img src="';
       if (!empty($fila['art_imagen'])) {
         echo '' . $fila["art_imagen"] . '" alt="error al cargar imagen" class="ProductsList_Card-Img">
-              </div>
-              <div class="ProductsList_Card-Content">
-                <span class="ProductsList_Card-Cat">' . $fila["cat_nom"] . '</span>
-                  <div class="ProductsList_Card-Name_Container">
-                    <h5 class="ProductsList_Card-Name">' . $fila["art_nom"] . '</h5>
-                  </div>
-                <div class="text-center"> Disponibles: <span style="color: red; font-size: large;">' . $fila["art_stock"] . '</span> </div>
-                <h4 class="ProductsList_Card-Price">$' . $fila["art_precio"] . '</h4>
-              </div>
-            </div>';
+      </div>
+      <div class="ProductsList_Card-Content">
+      <span class="ProductsList_Card-Cat">' . $fila["cat_nom"] . '</span>
+      <div class="ProductsList_Card-Name_Container">
+      <h5 class="ProductsList_Card-Name">' . $fila["art_nom"] . '</h5>
+      </div>
+      <div class="text-center"> Disponibles: <span style="color: red; font-size: large;">' . $fila["art_stock"] . '</span> </div>
+      <h4 class="ProductsList_Card-Price">$' . $fila["art_precio"] . '</h4>
+      </div>
+      </div>';
       } else {
         echo './../assets/images/default.png" alt="error al cargar imagen" class="ProductsList_Card-Img">
-                </div>
-                  <div class="ProductsList_Card-Content">
+      </div>
+      <div class="ProductsList_Card-Content">
                   <span class="ProductsList_Card-Cat">' . $fila["cat_nom"] . '</span>
                   <div class="ProductsList_Card-Name_Container">
                   <h5 class="ProductsList_Card-Name">' . $fila["art_nom"] . '</h5>
                   </div>
                   <div class="text-center">Disponibles:' . $fila["art_stock"] . '</div>
-                    <h4 class="ProductsList_Card-Price">$' . $fila["art_precio"] . '</h4>
+                  <h4 class="ProductsList_Card-Price">$' . $fila["art_precio"] . '</h4>
                   </div>
-                </div>';
+                  </div>';
       }
     }
   } else {
     echo 'No se encontraron resultados';
   }
-
-
   mysqli_close($conexion);
 }
 
+//Empieza --- Cargar Categorias para select
 
 function cargarCategorias()
 {
@@ -158,6 +154,8 @@ function cargarCategorias()
   }
   mysqli_close($conexion);
 }
+
+//Termina --- Cargar Categorias select
 
 //Buscar articulos en ...
 
@@ -364,7 +362,7 @@ function mostrarArticuloSeleccionado()
               <p class="ProductDetails_Main-Description">' . $fila["art_desc"] . '</p>
               <p class="ProductDetails_Main-Price">$' . $fila["art_precio"] . '</p>
               <p class="ProductDetails_Main-Price">Stock:' . $fila["art_stock"] . '</p>
-              <a href="https://wa.me/573001112233?text=Hola!%20Estoy%20interesado%20en%20'.$fila["art_nom"].'" class="ProductDetails_Main-Button" target="_blank">
+              <a href="https://wa.me/573001112233?text=Hola!%20Estoy%20interesado%20en%20' . $fila["art_nom"] . '" class="ProductDetails_Main-Button" target="_blank">
                   Consultar Producto
               </a>
           </div>
@@ -396,7 +394,7 @@ function mostrarArticuloSeleccionado()
             <p class="ProductDetails_Main-Description">' . $fila["art_desc"] . '</p>
             <p class="ProductDetails_Main-Price">$' . $fila["art_precio"] . '</p>
             <p class="ProductDetails_Main-Price">Stock:' . $fila["art_stock"] . '</p>
-            <a href=https://wa.me/573001112233?text=Hola!%20Estoy%20interesado%20en%20'.$fila["art_nom"].' class="ProductDetails_Main-Button" target="_blank">
+            <a href=https://wa.me/573001112233?text=Hola!%20Estoy%20interesado%20en%20' . $fila["art_nom"] . ' class="ProductDetails_Main-Button" target="_blank">
                 Consultar Producto
             </a>
         </div>
@@ -524,11 +522,3 @@ function imagenes_articuloSeleccionado()
   }
 }
 //
-
-
-
-
-
-
-
-?>

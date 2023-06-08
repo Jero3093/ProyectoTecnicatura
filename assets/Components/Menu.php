@@ -7,20 +7,11 @@ echo '
                 <img src="./../assets/icons/Buscar.png" class="Menu_Search-Button-Icon" />
             </button>
         </div>
-            <ul class="Menu_Category">
-                <li><a class="Menu_Category-item" href="#">Cajas</a></li>
-                <li><a class="Menu_Category-item" href="#">Descuentos</a></li>
-                <li><a class="Menu_Category-item" href="#">Estanterias</a></li>
-                <li><a class="Menu_Category-item" href="#">Llaveros</a></li>
-                <li><a class="Menu_Category-item" href="#">Marcos</a></li>
-                <li><a class="Menu_Category-item" href="#">Materas</a></li>
-                <li><a class="Menu_Category-item" href="#">Mesas</a></li>
-                <li><a class="Menu_Category-item" href="#">Otros Accesorios</a></li>
-                <li><a class="Menu_Category-item" href="#">Percheros</a></li>
-                <li><a class="Menu_Category-item" href="#">Pinos Navidad</a></li>
-                <li><a class="Menu_Category-item" href="#">Sillas</a></li>
-                <li><a class="Menu_Category-item" href="#">Tablas y Cuencos</a></li>
-            </ul>
-    </div>
-';
-?>
+        <!--Categories List-->
+            <div class="dropdown dropdown_menu" id="dropdown_menu">
+            <select name="categoria" id="seleccionarOpcionMenu" class="form-select border-2 text-black Menu_DropdownButton">
+                            <option value="none">Categorias</option>';
+                            cargarCategorias();
+            echo '</select>
+            </div>
+    </div>';

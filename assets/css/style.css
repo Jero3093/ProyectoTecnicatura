@@ -198,13 +198,12 @@ body::-webkit-scrollbar-thumb {
     display: none;
     flex-direction: column;
     padding-top: 10px;
-    background-color: #e6e6e6;
+    background-color: #f0f6fe;
     width: 100%;
     top: 80px;
     position: absolute;
     z-index: 9999;
-    box-shadow: 0 0 2px gray;
-    border-bottom: 1px solid gray;
+    border-bottom: 2px solid gray;
 }
 
 .Menu_Search {
@@ -249,17 +248,20 @@ body::-webkit-scrollbar-thumb {
     display: flex;
 }
 
-.Menu_Category {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    margin-top: 5px;
+.Menu_DropdownButton {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+    height: 50px !important;
+    outline: none !important;
+    padding: 10px !important;
+    border-radius: 7px !important;
+    font-size: 16px !important;
+    border: 1px solid rgba(128, 128, 128, 0.555) !important;
 }
 
-.Menu_Category-item {
-    color: black;
-    text-decoration: none;
+.dropdown_menu {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 /*===============

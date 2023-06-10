@@ -333,21 +333,21 @@ function mostrarArticuloSeleccionado()
       echo '
       <!--Product Content-->
       <main class="ProductDetails">
-          <div id="carouselExampleAutoplaying" class="carousel slide ProductDetails_Main" data-bs-ride="carousel">
+          <div id="carouselExampleAutoplaying" class="carousel slide ProductDetails_Main carousel-dark" data-bs-ride="carousel">
               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                      <img src="' . $filaPrimer_IMG['ruta_img'] . '" class="ProductDetails_Main-Img " alt="...">
+                  <div class="carousel-item active" id="ProductsList_Card_Image-Container">
+                      <img src="' . $filaPrimer_IMG['ruta_img'] . '" class="ProductDetails_Main-Img " alt="..." id="ProductsList_Card_Image">
                   </div>';
       while ($imagenRecibida = mysqli_fetch_array($datosIMG)) {
         echo ' 
                         <div class="carousel-item">
-                            <img src="' . $imagenRecibida['ruta_img'] . '" class="ProductDetails_Main-Img" alt="...">
+                            <img src="' . $imagenRecibida['ruta_img'] . '" class="ProductDetails_Main-Img" alt="..." id="ProductsList_Card_Image">
                         </div>';
       }
 
       echo '
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="carousel-control-prev-icon color-dark" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
               </button>
               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">

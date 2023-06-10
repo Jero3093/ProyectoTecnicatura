@@ -26,6 +26,10 @@
 </head>
 
 <body>
+    <!--Modal de Imagen Seleccionada para Maximiar-->
+    <div class="ModalMaxImageContainer" id="ModalMaxImageContainer">
+        <button class="Close_ModalMaxImageContainer">X</button>
+    </div>
 
     <?php include('./../assets/Components/Nav_articulo.php');
     include('./../assets/Components/Menu.php'); ?>

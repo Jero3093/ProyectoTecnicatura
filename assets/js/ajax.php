@@ -1092,3 +1092,12 @@ if (
 }
 
 //Termina --- Consultar Articulos de Categoria Seleccionada
+
+//Empieza --- Maximizar Imagen Seleccionada
+
+if (isset($_POST['action']) && $_POST['action'] == 'imagenSeleccionada') {
+
+  echo '<img src="' . $_POST["imagenSeleccionada"] . '" class="ModalMaxImageContainer-Img" />';
+}
+
+//Termina --- Maximizar Imagen Seleccionada

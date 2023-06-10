@@ -1626,4 +1626,44 @@ $(function () {
   }
 
   //Empieza --- Abrir o Cerrar Menu
+
+  //Empieza --- Maximizar Imagen Seleccionada
+
+  $(document).on("click", "#ProductsList_Card_Image", function() {
+    let image = $(this).attr("src");
+  
+    let action = "imagenSeleccionada";
+  
+    $.ajax({
+      type: "POST",
+      async: true,
+      url: "./../assets/js/ajax.php",
+      data: { action: action, imagenSeleccionada: image },
+      success: function(response) {
+        if (response == 0) {
+          // Aquí puedes agregar el código que deseas ejecutar cuando la respuesta es 0
+        } else {
+          let resultado = response;
+          $(".ModalMaxImageContainer").html(resultado);
+          $(".ModalMaxImageContainer")
+            .removeClass()
+            .addClass("ModalMaxImageContainer-Active");
+        }
+        console.log("funciona");
+      },
+      error: function(error) {
+        console.error(error);
+      },
+    });
+  });
+
+  //Cerrar Modal
+
+  $("#ModalMaxImageContainer").click(() => {
+    $("#ModalMaxImageContainer")
+      .removeClass("ModalMaxImageContainer-Active")
+      .addClass("ModalMaxImageContainer");
+  });
+
+  //Termina --- Maximizar Imagen Seleccionada
 });

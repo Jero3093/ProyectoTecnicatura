@@ -432,7 +432,7 @@ body::-webkit-scrollbar-thumb {
 
 .ProductDetails_Main {
     width: 330px;
-    height: 350px;
+    height: 400px;
     background-color: #f5f5f5;
     display: flex;
     align-self: center;
@@ -442,6 +442,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
     border: 1px solid #0000001a;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .ProductDetails_Main-Img {
@@ -528,6 +529,37 @@ body::-webkit-scrollbar-thumb {
     background-color: grey;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.ModalMaxImageContainer {
+    display: none;
+}
+
+.ModalMaxImageContainer-Active {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(96, 96, 96, 0.704) !important;
+    z-index: 999;
+    height: 100vh;
+}
+
+.ModalMaxImageContainer-Img {
+    border-radius: 10px;
+    max-width: 425px;
+    height: 500px;
+}
+
+.Close_ModalMaxImageContainer {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
 }
 
 /*====================
@@ -1149,7 +1181,7 @@ body::-webkit-scrollbar-thumb {
 
     .ProductDetails_Main {
         width: 330px;
-        height: 340px;
+        height: 400px;
     }
 
     .ProductDetails_Main-Img {
@@ -1167,6 +1199,14 @@ body::-webkit-scrollbar-thumb {
 
     .ProductDetails_CategoryList__Container {
         max-width: 600px;
+    }
+
+    /*--Product Details Max Image--*/
+
+    .ModalMaxImageContainer-Img {
+        border-radius: 10px;
+        max-width: 400px;
+        height: 450px;
     }
 
     /*--Funtions Page--*/
@@ -1285,7 +1325,7 @@ body::-webkit-scrollbar-thumb {
 
     .ProductDetails_Main {
         width: 430px;
-        height: 440px;
+        height: 510px;
     }
 
     .ProductDetails_Main-Img {
@@ -1336,6 +1376,14 @@ body::-webkit-scrollbar-thumb {
 
     .ProductDetails_CategoryList__Container {
         max-width: none;
+    }
+
+    /*--Product Details Max Image--*/
+
+    .ModalMaxImageContainer-Img {
+        border-radius: 10px;
+        max-width: 500px;
+        height: 550px;
     }
 
     /*--Funtions Page--*/

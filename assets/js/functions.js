@@ -70,6 +70,60 @@ function subirImagen_articulo() {
   });
 }
 
+//Comienza --- Insertar Imagenes de Banner
+
+function subirImagen_Banner() {
+  let parametros = new FormData($("#form_subirImagenesBanner")[0]);
+
+  $.ajax({
+    data: parametros,
+    url: "./../assets/js/ajax.php",
+    type: "POST",
+    contentType: false,
+    processData: false,
+    beforeSend: function (response) {},
+    success: function (response) {
+      alert("Se agregaron las imagenes correctamente");
+      location.reload();
+    },
+  });
+}
+
+//Termina--- Insertar Imagenes de Banner
+
+//Comienza --- Borrar Imagen Seleccionada de Banner
+
+$(".AddProductImage_Carrousel-Card-Button").click(function () {
+  var boton = $(this);
+  eliminar_imgSeleccionadaBanner(boton);
+});
+
+function eliminar_imgSeleccionadaBanner(objet) {
+  let dataValue = $(objet).attr("data");
+  let action = "eliminar_imgSeleccionadaBanner";
+  console.log("esto es " + dataValue);
+  $.ajax({
+    url: "./../assets/js/ajax.php",
+    type: "POST",
+    async: true,
+    data: { action: action, eliminar_imgSeleccionadaBanner: dataValue },
+
+    success: function (response) {
+      console.log(response);
+      //data = $.parseJSON(response);
+
+      if (response !== 0) {
+        location.reload();
+      } else {
+        alert("Hubo un error al eliminar");
+      }
+    },
+    error: function (error) {},
+  });
+}
+
+//Termina --- Borrar Imagen Seleccionada de Banner
+
 function mostrarLista_gastosFechas_parametros(fecha1, fecha2) {
   fechaInicio.datepicker({
     dateFormat: "yy-mm-dd",
@@ -1629,17 +1683,17 @@ $(function () {
 
   //Empieza --- Maximizar Imagen Seleccionada
 
-  $(document).on("click", "#ProductsList_Card_Image", function() {
+  $(document).on("click", "#ProductsList_Card_Image", function () {
     let image = $(this).attr("src");
-  
+
     let action = "imagenSeleccionada";
-  
+
     $.ajax({
       type: "POST",
       async: true,
       url: "./../assets/js/ajax.php",
       data: { action: action, imagenSeleccionada: image },
-      success: function(response) {
+      success: function (response) {
         if (response == 0) {
           // Aquí puedes agregar el código que deseas ejecutar cuando la respuesta es 0
         } else {
@@ -1651,7 +1705,7 @@ $(function () {
         }
         console.log("funciona");
       },
-      error: function(error) {
+      error: function (error) {
         console.error(error);
       },
     });

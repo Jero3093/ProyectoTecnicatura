@@ -1101,3 +1101,62 @@ if (isset($_POST['action']) && $_POST['action'] == 'imagenSeleccionada') {
 }
 
 //Termina --- Maximizar Imagen Seleccionada
+
+
+//Empieza --- Cargar Imagenes de Banner 
+
+if (isset($_FILES['bannerimages'])) {
+  include('./../js/bd.php');
+  $archivos = $_FILES['bannerimages'];
+
+  foreach ($archivos['name'] as $indice => $nombre) {
+    $tipo = $archivos['type'][$indice];
+    $ruta_temporal = $archivos['tmp_name'][$indice];
+    $error = $archivos['error'][$indice];
+    $tamano = $archivos['size'][$indice];
+
+    $extension = pathinfo($nombre, PATHINFO_EXTENSION);
+
+    $nuevo_nombre = md5($nombre) . '.' . $extension;
+
+    $destino = './../../assets/images/' . $nuevo_nombre;
+    $destinoQuery = './../assets/images/' . $nuevo_nombre;
+    if (move_uploaded_file($ruta_temporal, $destino)) {
+
+      $consulta = "INSERT INTO `banner` (`banner_ruta`) VALUES ('" . $destinoQuery . "')";
+      $datos = mysqli_query($conexion, $consulta);
+      mysqli_close($conexion);
+
+      // El archivo se ha subido exitosamente con el nuevo nombre y la extensión
+      echo "¡La imagen $nombre se ha subido correctamente con el nuevo nombre $nuevo_nombre!";
+    } else {
+      // Ocurrió un error al mover el archivo
+      echo "Error al subir la imagen $nombre. Inténtalo de nuevo.";
+    }
+  }
+}
+
+//Termina --- Cargar Imagenes de Banner 
+
+//Comienza --- Eliminar Imagen Seleccionada de Banner 
+
+if ((isset($_POST['action'])) && $_POST['action'] == 'eliminar_imgSeleccionadaBanner') {
+  //SELECT * FROM articulos WHERE articulos.art_nom LIKE ('%', palabra , '%');
+  include('bd.php');
+
+  $consulta = "DELETE FROM `banner` WHERE banner_ruta ='" . $_POST['eliminar_imgSeleccionadaBanner'] . "'";
+  $datos = mysqli_query($conexion, $consulta) or die($mysqli->error);
+
+  mysqli_close($conexion);
+
+  if ($datos) {
+    $data = 'Se eliminó correctamente';
+  } else {
+    $data = 0;
+  }
+
+  echo json_encode($data, JSON_UNESCAPED_UNICODE);
+  exit;
+}
+
+//Termina --- Eliminar Imagen Seleccionada de Banner 

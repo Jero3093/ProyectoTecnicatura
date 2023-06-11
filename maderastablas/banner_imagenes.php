@@ -4,11 +4,15 @@
 <head>
     <?php
     session_start();
-    include('./../assets/js/funciones.php');
+    include("./../assets/js/funciones.php");
+    comprobarUsuario();
     ?>
-    <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link a mis estilos -->
     <link rel="stylesheet" href="./../assets/css/style.css">
     <!--Icono en la pestaña -->
     <link rel="shortcut icon" href="./../assets/icons/favicon.png">
@@ -22,24 +26,22 @@
     <link rel="stylesheet" href="./../jQueryUI/jquery-ui.css">
     <link rel="stylesheet" href="./../jQueryUI/jquery-ui.structure.css">
     <link rel="stylesheet" href="./../jQueryUI/jquery-ui.theme.css">
-    <title>De Maderas Tablas</title>
+    <title>Banner</title>
 </head>
 
 <body>
-    <!--Modal de Imagen Seleccionada para Maximiar-->
-    <div class="ModalMaxImageContainer" id="ModalMaxImageContainer"></div>
+    <?php include("./../assets/Components/Nav_articulo.php"); ?>
 
-    <?php include('./../assets/Components/Nav_articulo.php');
-    include('./../assets/Components/Menu.php'); ?>
-
-    <!--Product Content-->
-    <?php mostrarArticuloSeleccionado(); ?>
-    <!--Category Products Carrousel-->
-    <div class="ProductDetails_CategoryList__Container">
-        <?php mostrarArticulosMismaCategoria(); ?>
-    </div>
-    <!--Footer-->
-    <?php include('./../assets/Components/footer.php'); ?>
+    <form method="POST" enctype="multipart/form-data" id="form_subirImagenesBanner" class="AddProductImage_Container">
+        <!--Titulo-->
+        <h1>Agregar Imagenes a Banner</h1>
+        <!--Carrousel de Imagenes-->
+        <div class="AddProductImage_Carrousel">
+            <?php imagenes_banner(); ?>
+        </div>
+        <input type="file" name="bannerimages[]" multiple>
+        <input type="button" onclick="subirImagen_Banner()" value="Subir imágenes" class="AddProductImage-Submit">
+    </form>
 </body>
 <!--Importa librería jquery -->
 <!-- <script src="./../jQuery/jquery.min.js"></script> -->

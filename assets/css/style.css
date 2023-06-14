@@ -270,14 +270,16 @@ body::-webkit-scrollbar-thumb {
 
 .Banners {
     width: 100vw;
-    height: 300px;
+    height: 200px;
     display: flex;
     overflow: hidden;
 }
 
 .BannerImg {
     width: 80%;
-    height: 300px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
 }
 
 /*=======================
@@ -1240,6 +1242,16 @@ body::-webkit-scrollbar-thumb {
         padding-right: 0;
     }
 
+    /*--Banner--*/
+
+    .Banners {
+        height: 300px;
+    }
+
+    .BannerImg {
+        height: 300px;
+    }
+
     /*--Footer--*/
 
     .footer {
@@ -1395,6 +1407,15 @@ body::-webkit-scrollbar-thumb {
         place-items: center;
     }
 
+    /*--Banner--*/
+
+    .Banners {
+        height: 330px;
+    }
+
+    .BannerImg {
+        height: 330px;
+    }
 
     /*--Footer--*/
 

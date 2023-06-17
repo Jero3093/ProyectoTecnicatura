@@ -496,6 +496,13 @@ body::-webkit-scrollbar-thumb {
     color: white;
     column-gap: 5px;
     font-weight: 600;
+    transition: 0.2s ease-in-out;
+}
+
+.ProductDetails_Main-Button:hover {
+    transform: scale(1.03);
+    transition: 0.2s ease-in-out;
+    color: white;
 }
 
 .ProductDetails_Main-Button-Icon {
@@ -605,6 +612,7 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 0 10px gray;
     transition: 0.2s ease-in-out;
     transform: scale(1.01, 1.01);
+    color: brown;
 }
 
 .FunctionCard-Content {
@@ -615,6 +623,10 @@ body::-webkit-scrollbar-thumb {
 .FuntionCard_Title {
     font-size: 20px;
     font-weight: bold;
+}
+
+.FunctionCard_Description {
+    color: black;
 }
 
 .FuntionCard_Icon-Container {

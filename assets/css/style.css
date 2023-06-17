@@ -482,6 +482,7 @@ body::-webkit-scrollbar-thumb {
 
 .ProductDetails_Main-Button {
     display: flex;
+    flex-direction: row;
     align-self: center;
     align-items: center;
     justify-content: center;
@@ -492,7 +493,14 @@ body::-webkit-scrollbar-thumb {
     font-size: 17px;
     background-color: rgb(45, 227, 45);
     text-decoration: none;
-    color: black;
+    color: white;
+    column-gap: 5px;
+    font-weight: 600;
+}
+
+.ProductDetails_Main-Button-Icon {
+    width: 40px;
+    height: 40px;
 }
 
 .ProductsList_Card-Cat {

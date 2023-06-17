@@ -363,7 +363,8 @@ function mostrarArticuloSeleccionado()
               <p class="ProductDetails_Main-Price">$' . $fila["art_precio"] . '</p>
               <p class="ProductDetails_Main-Price">Stock:' . $fila["art_stock"] . '</p>
               <a href="https://wa.me/573001112233?text=Hola!%20Estoy%20interesado%20en%20' . $fila["art_nom"] . '" class="ProductDetails_Main-Button" target="_blank">
-                  Consultar Producto
+                <img src="./../assets/icons/whats.svg" class="ProductDetails_Main-Button-Icon" />    
+                Consultar Producto
               </a>
           </div>
       </main>';

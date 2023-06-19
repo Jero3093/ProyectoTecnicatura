@@ -395,9 +395,10 @@ function mostrarArticuloSeleccionado()
             <p class="ProductDetails_Main-Description">' . $fila["art_desc"] . '</p>
             <p class="ProductDetails_Main-Price">$' . $fila["art_precio"] . '</p>
             <p class="ProductDetails_Main-Price">Stock:' . $fila["art_stock"] . '</p>
-            <a href=https://wa.me/573001112233?text=Hola!%20Estoy%20interesado%20en%20' . $fila["art_nom"] . ' class="ProductDetails_Main-Button" target="_blank">
+            <a href="https://wa.me/573001112233?text=Hola!%20Estoy%20interesado%20en%20' . $fila["art_nom"] . '" class="ProductDetails_Main-Button" target="_blank">
+                <img src="./../assets/icons/whats.svg" class="ProductDetails_Main-Button-Icon" />    
                 Consultar Producto
-            </a>
+              </a>
         </div>
     </main>';
     }
@@ -531,7 +532,7 @@ function cargarBanner()
   include("bd.php");
 
   $consultaPrimeraImagenBanner = 'SELECT * FROM banner LIMIT 1';
-  
+
   $consultaimagenesBanner = 'SELECT * FROM banner LIMIT 99999';
 
   $primeraImagenBanner = mysqli_query($conexion, $consultaPrimeraImagenBanner);
@@ -549,13 +550,13 @@ function cargarBanner()
               <div class="carousel-item active">
                 <img src="' . $filaPrimer_IMG['banner_ruta'] . '" class="d-block w-100 BannerImg rounded-2" alt="...">
               </div>';
-              while ($imagenesBannerRecibida = mysqli_fetch_array($imagenesBanner)) {
-                echo '
+    while ($imagenesBannerRecibida = mysqli_fetch_array($imagenesBanner)) {
+      echo '
                 <div class="carousel-item">
-                  <img src="'. $imagenesBannerRecibida['banner_ruta'] .'" class="d-block w-100 BannerImg rounded-2" alt="...">
+                  <img src="' . $imagenesBannerRecibida['banner_ruta'] . '" class="d-block w-100 BannerImg rounded-2" alt="...">
                 </div>';
-              }
-            echo '</div>
+    }
+    echo '</div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>

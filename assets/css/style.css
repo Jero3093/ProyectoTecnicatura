@@ -70,6 +70,7 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     padding: 10px;
     flex-wrap: wrap;
+    backdrop-filter: blur(3px);
 }
 
 .TitleContainer {
@@ -820,7 +821,7 @@ body::-webkit-scrollbar-thumb {
 ==============*/
 
 .footer {
-    background-color: #e2e8f0;
+    background-color: #e2e8f08b;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -828,6 +829,7 @@ body::-webkit-scrollbar-thumb {
     padding: 12px;
     margin-top: auto;
     row-gap: 10px;
+    backdrop-filter: blur(3px);
 }
 
 .FooterMain {
@@ -884,11 +886,12 @@ body::-webkit-scrollbar-thumb {
     Copyright
 ================*/
 .Copyright {
-    background-color: #e2e8f0;
+    background-color: #e2e8f08b;
     display: flex;
     padding: 10px;
     align-items: center;
     justify-content: center;
+    backdrop-filter: blur(3px);
 }
 
 .CopyrightText {

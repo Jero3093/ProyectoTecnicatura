@@ -988,6 +988,7 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     justify-content: center;
     transition: 0.1s linear;
+    color: black;
 }
 
 .Login_SubmitButton:hover {
